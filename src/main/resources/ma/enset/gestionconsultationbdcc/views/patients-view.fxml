@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.gestionconsultationbdcc.controllers.PatientController">
+   <top>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+               <children>
+                  <Label text="Nom :" />
+                  <Label text="Prénom :" GridPane.rowIndex="1" />
+                  <Label text="Téléphone :" GridPane.rowIndex="2" />
+                  <TextField fx:id="TextFieldNom" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="TextFieldPrenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="TextFieldTelephone" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addPatient" text="Ajouter" />
+                  <Button mnemonicParsing="false" onAction="#deletePatient" text="Supprimer" />
+                  <Button mnemonicParsing="false" text="Modifier" onAction="#updatePatient"/>
+                  <TextField fx:id="TextFieldSearch" />
+                  <Label fx:id="LabelSuccess" textFill="green" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="TableViewPatient" prefHeight="200.0" prefWidth="576.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="ColumnID" prefWidth="99.0" text="ID" />
+          <TableColumn fx:id="ColumnNom" prefWidth="152.0" text="Nom" />
+            <TableColumn fx:id="ColumnPrenom" prefWidth="139.0" text="Prénom" />
+            <TableColumn fx:id="ColumnTelephone" prefWidth="209.0" text="Téléphone" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
